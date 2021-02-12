@@ -1,2 +1,6 @@
-
 examples/.ipynb_checkpoints/xy-line-graph-checkpoint.ipynb
+
+# env files
+.env
+.env.*
+!.env.example
