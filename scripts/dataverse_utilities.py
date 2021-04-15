@@ -6,8 +6,8 @@ import json
 from datetime import datetime
 from typing import List
 from decouple import config
-
-
+from ipywidgets import interact
+import os
 #################################################################################
 # generic code to interact with the dataverse repository of the JDH of the C2DH #
 #################################################################################
@@ -24,6 +24,8 @@ DATAVERSE_URL = config('DATAVERSE_URL')
 # APi token
 API_TOKEN = config('API_TOKEN')
 
+IS_DATAVERSE=True
+
 def timer(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
@@ -38,7 +40,14 @@ def timer(func):
 #In the notebook need to import implicetely the timer function 
 #Example from scripts.dataverse_utilities import timer, test
 
+# for example jdh001 for the first issue
+def get_datasource(datasource_to_use):
+    return datasource_to_use
 
+
+def get_datasource_widget():
+    widget= interact(get_datasource, datasource_to_use=[('dataverse', True), ('github', False)])
+    display(widget)
 # return the list of a dataset for a specific dataverse - issue
 # for example jdh001 for the first issue
 @timer 
@@ -73,6 +82,28 @@ def get_datafileid(dataverse_alias: str, orcid : str, filenameinput: str) -> str
     return result   
 
 
+
 @timer 
-#def display_image():
-#    display(Image(url="https://data.journalofdigitalhistory.org/api/access/datafile/6"))
+def display_image(dataverse_alias: str, orcid : str, filenameinput: str,isDataverse : bool):
+    if isDataverse:
+        datafileid = get_datafileid(dataverse_alias, orcid, filenameinput)
+        url = DATAVERSE_URL+"api/access/datafile/" + str(datafileid )
+        headers = {"X-Dataverse-key": API_TOKEN}
+        r = httpx.get(url, headers=headers)
+        display(Image(r.content))
+    #display(Image(url="https://data.journalofdigitalhistory.org/api/access/datafile/" + datafileid))
+    else:
+        display(Image("../data/filenameinput"))
+
+
+def get_dataverse_url_for_file(dataverse_alias: str, orcid : str, filenameinput: str, isDataverse : bool) -> str:
+    if isDataverse:
+        datafileid = get_datafileid(dataverse_alias, orcid, filenameinput)
+        url = DATAVERSE_URL+"api/access/datafile/" + str(datafileid )
+        headers = {"X-Dataverse-key": API_TOKEN}
+        httpx.get(url, headers=headers)
+    else:
+        url=os.getcwd() + "/data/" +filenameinput 
+    return url
+
+
