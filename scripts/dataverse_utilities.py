@@ -20,11 +20,12 @@ import os
 
 
 # Dataverse url
-DATAVERSE_URL = config('DATAVERSE_URL')
+DATAVERSE_URL = config('DATAVERSE_URL', default='https://data.journalofdigitalhistory.org/')
 # APi token
-API_TOKEN = config('API_TOKEN')
+# the default one is for the JDH JDH user with role member (read-only)
+API_TOKEN = config('API_TOKEN', default='910763b4-a058-4649-8137-e619f47b5285')
 
-IS_DATAVERSE=True
+
 
 def timer(func):
     @functools.wraps(func)
