@@ -7,3 +7,4 @@ plotly==4.14.3
 python-decouple==3.4
 python-dotenv==0.15.0
 vega==3.4.0
+nbdime==3.0.0b

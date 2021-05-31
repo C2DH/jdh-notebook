@@ -92,7 +92,6 @@ def display_image(dataverse_alias: str, orcid : str, filenameinput: str,isDatave
         headers = {"X-Dataverse-key": API_TOKEN}
         r = httpx.get(url, headers=headers)
         display(Image(r.content))
-    #display(Image(url="https://data.journalofdigitalhistory.org/api/access/datafile/" + datafileid))
     else:
         display(Image("../data/filenameinput"))
 
