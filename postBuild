@@ -1,2 +1,2 @@
 jupyter contrib nbextension install --user
-jupyter nbextension enable --py cite2c
+jupyter nbextension enable cite2c/main
