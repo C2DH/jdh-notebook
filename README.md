@@ -1,3 +1,7 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/C2DH/jdh-notebook/develop)
+
+
+
 # jdh-notebook
 
 Jupyter notebook's contents for the journal of digital history

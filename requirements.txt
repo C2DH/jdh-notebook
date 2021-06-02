@@ -1,5 +1,10 @@
-jupyter_contrib_nbextensions
 cite2c==0.2.1
-python-dotenv==0.15.0
-plotly==4.14.3
+httpx==0.16.1
 Interactive==1.0.1
+jupyter-contrib-nbextensions==0.5.1
+matplotlib
+plotly==4.14.3
+python-decouple==3.4
+python-dotenv==0.15.0
+vega==3.4.0
+#nbdime==3.0.0b
