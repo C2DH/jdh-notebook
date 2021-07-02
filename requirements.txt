@@ -8,3 +8,4 @@ python-decouple==3.4
 python-dotenv==0.15.0
 vega==3.4.0
 #nbdime==3.0.0b
+folium==0.12.0
