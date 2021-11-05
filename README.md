@@ -17,3 +17,7 @@ pip install -r requirements.txt
 ## To execute request_dataverse
 
 Create an .env file based on the .env.example
+
+## DH Nord workshop
+
+Presentation available here: https://docs.google.com/presentation/d/1NQTos1FtiFQZbOuXp7sIsONR_un81V2aR_ug_IY4jpk/edit#slide=id.gfb18a08927_0_16
