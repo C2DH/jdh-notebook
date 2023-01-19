@@ -1,0 +1,25 @@
+on: [workflow_dispatch]
+
+name: GitHub Actions Ipynb for publishing
+jobs:
+  ipynb_for_publishing:
+    runs-on: ubuntu-latest
+    name: Ipynb for publishing
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: Skim example file
+        id: skim
+        uses: c2dh/journal-of-digital-history-ipynb-skim-action@v1.0.0
+        with:
+          notebook: 'examples/Author_Guideline/AuthorGuideline.ipynb'
+          output_notebook: 'examples/Author_Guideline/skim-authorGuideline.ipynb'
+      # Use the output from the `hello` step
+      - name: Use the output
+        run: echo "number of cells ${{ steps.skim.outputs.size }} - output ${{ steps.skim.outputs.outputNotebook }}"
+      - name: commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: '*.ipynb'
+          
+ 
