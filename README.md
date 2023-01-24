@@ -1,8 +1,13 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/C2DH/jdh-notebook/HEAD)
 
-Single file
+Single file via Juypter notebook
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/C2DH/jdh-notebook/main?urlpath=examples%2FD3_JS_example.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/C2DH/jdh-notebook/HEAD?filepath=%2Fexamples%2FD3_JS_example.ipynb)
+
+Single file via Juypter lab
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/C2DH/jdh-notebook/HEAD?labpath=%2Fexamples%2FD3_JS_example.ipynb)
+
 
 
 # jdh-notebook
