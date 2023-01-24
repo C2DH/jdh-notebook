@@ -1,5 +1,8 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/C2DH/jdh-notebook/HEAD)
 
+Single file
+
+[![Binder](https://mybinder.org/v2/gh/C2DH/jdh-notebook/HEAD?path=examples%2FD3_JS_example.ipynb)
 
 
 # jdh-notebook
