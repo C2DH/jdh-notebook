@@ -14,3 +14,5 @@ jobs:
         with:
           notebook: 'examples/Author_Guideline/introduction-raw.ipynb'
           output_notebook: 'examples/Author_Guideline/introduction.ipynb'
+      - name: commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
