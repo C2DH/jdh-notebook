@@ -1,0 +1,16 @@
+on: [workflow_dispatch]
+
+name: Prepare the ipynb for the Guidelines page
+jobs:
+  prepare_guidelines:
+    runs-on: ubuntu-latest
+    name: Ipynb for publishing
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: General introduction
+        id: introduction
+        uses: c2dh/journal-of-digital-history-ipynb-skim-action@master
+        with:
+          notebook: 'examples/Author_Guideline/introduction-raw.ipynb'
+          output_notebook: 'examples/Author_Guideline/introduction.ipynb'
