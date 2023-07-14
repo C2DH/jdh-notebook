@@ -19,6 +19,18 @@ jobs:
         uses: c2dh/journal-of-digital-history-ipynb-skim-action@master
         with:
           notebook: 'examples/Author_Guideline/AuthorGuideline-mac-raw.ipynb'
-          output_notebook: 'examples/Author_Guideline/AuthorGuideline-mac.ipynb'      
+          output_notebook: 'examples/Author_Guideline/AuthorGuideline-mac.ipynb'
+      - name: windows installation
+        id: windows
+        uses: c2dh/journal-of-digital-history-ipynb-skim-action@master
+        with:
+          notebook: 'examples/Author_Guideline/AuthorGuideline-windows-raw.ipynb'
+          output_notebook: 'examples/Author_Guideline/AuthorGuideline-windows.ipynb'
+      - name: styling and makeup
+        id: styling
+        uses: c2dh/journal-of-digital-history-ipynb-skim-action@master
+        with:
+          notebook: 'examples/Author_Guideline/AuthorGuideline-styling-raw.ipynb'
+          output_notebook: 'examples/Author_Guideline/AuthorGuideline-styling.ipynb'
       - name: commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
